@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Todd R. Johnson, PhD with help from Claude Sonnet 4.5">
+<meta name="dcterms.date" content="2025-11-13">
+
+<title>A Cautionary Tale: Why Your Associations Don’t Mean a Thing Without Causal Thinking</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="associations-cautionary-tale_files/libs/clipboard/clipboard.min.js"></script>
+<script src="associations-cautionary-tale_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="associations-cautionary-tale_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="associations-cautionary-tale_files/libs/quarto-html/popper.min.js"></script>
+<script src="associations-cautionary-tale_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="associations-cautionary-tale_files/libs/quarto-html/anchor.min.js"></script>
+<link href="associations-cautionary-tale_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="associations-cautionary-tale_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="associations-cautionary-tale_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="associations-cautionary-tale_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="associations-cautionary-tale_files/libs/bootstrap/bootstrap-8a894fcc3cb5e37eb5bf30def131be2f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#act-i-hubris" id="toc-act-i-hubris" class="nav-link active" data-scroll-target="#act-i-hubris">Act I: Hubris</a></li>
+  <li><a href="#act-ii-confusion" id="toc-act-ii-confusion" class="nav-link" data-scroll-target="#act-ii-confusion">Act II: Confusion</a></li>
+  <li><a href="#act-iii-revelation" id="toc-act-iii-revelation" class="nav-link" data-scroll-target="#act-iii-revelation">Act III: Revelation</a></li>
+  <li><a href="#act-iv-hope-and-then-despair" id="toc-act-iv-hope-and-then-despair" class="nav-link" data-scroll-target="#act-iv-hope-and-then-despair">Act IV: Hope… and then Despair</a></li>
+  <li><a href="#act-v-understanding" id="toc-act-v-understanding" class="nav-link" data-scroll-target="#act-v-understanding">Act V: Understanding</a></li>
+  <li><a href="#epilogue-the-moral-of-the-story" id="toc-epilogue-the-moral-of-the-story" class="nav-link" data-scroll-target="#epilogue-the-moral-of-the-story">Epilogue: The Moral of the Story</a></li>
+  <li><a href="#what-should-you-actually-do" id="toc-what-should-you-actually-do" class="nav-link" data-scroll-target="#what-should-you-actually-do">What Should You Actually Do?</a></li>
+  <li><a href="#final-thought" id="toc-final-thought" class="nav-link" data-scroll-target="#final-thought">Final Thought</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A Cautionary Tale: Why Your Associations Don’t Mean a Thing Without Causal Thinking</h1>
+<p class="subtitle lead">Or: How I Learned to Stop Worrying and Love the DAG</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Todd R. Johnson, PhD with help from Claude Sonnet 4.5 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 13, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="act-i-hubris" class="level2">
+<h2 class="anchored" data-anchor-id="act-i-hubris">Act I: Hubris</h2>
+<p>You’re an up-and-coming researcher who has hypothesized, based on reading a few papers (okay, the abstracts and maybe a figure or two), that a factor—let’s call it the X-factor—makes a horrible disease, call it Y, even worse. The stronger X is, you believe, the worse it makes Y.</p>
+<p>This hypothesis feels right. It <em>should</em> be true. Your mentor mentioned something about it at a conference. A postdoc in another lab got a <em>Cell</em> paper on something vaguely related. Plus, you’ve already told people at department happy hour that you’re working on this, so you’re kind of committed now.</p>
+<p>You’ve secured access to some observational data containing X and Y, along with a couple of other variables–Z1 and Z2–that one of your masters students collected. You’re not entirely sure what Z1 and Z2 represent, but the student says they’re “potentially relevant covariates,” which sounds important. And as every good researcher knows, when you have covariates, you control for them. That’s just good science.</p>
+<p>But first things first. You need to establish the basic association. You load your data, type <code>lm(Y ~ X)</code>, and hit Enter with the confidence of someone who has attended at least two statistics workshops.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X, Y, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"The X-Factor Strikes!</span><span class="sc">\n</span><span class="st">β = "</span>, stats_marg<span class="sc">$</span>coef, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", R² = "</span>, stats_marg<span class="sc">$</span>r2, <span class="st">", "</span>, stats_marg<span class="sc">$</span>p),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.3</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X-Factor"</span>, <span class="at">ylab =</span> <span class="st">"Disease Severity (Y)"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit_marginal, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-scenario1-marginal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scenario1-marginal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="associations-cautionary-tale_files/figure-html/fig-scenario1-marginal-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scenario1-marginal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The moment of triumph
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Fantastic!</strong> You just confirmed your hypothesis. Even better, <em>look at that p-value!</em> You are well on your way to getting a paper in the major journal <em>Natura Medicine</em>. You see visions of a cover article and news headlines touting your finding and the importance of lowering the X-factor to lessen subsequent disease severity. You imagine how pleased your department leadership will be, because you know they love positive press almost as much as they love money. They might even name a classroom after you without requiring a major donation.</p>
+<p>But first, you have to adjust for other factors, because that is exactly what good papers do. You adjust for everything. That’s what “controlling for confounders” means, right?</p>
+<p>So you first adjust for Z1…</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Marginal</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X, Y, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Unadjusted: The Dream</span><span class="sc">\n</span><span class="st">β = "</span>, stats_marg<span class="sc">$</span>coef, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats_marg<span class="sc">$</span>p),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.3</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X"</span>, <span class="at">ylab =</span> <span class="st">"Y"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit_marginal, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjusted for Z1</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>resid_X_Z1 <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(X <span class="sc">~</span> Z1))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>resid_Y_Z1 <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(Y <span class="sc">~</span> Z1))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(resid_X_Z1, resid_Y_Z1,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Adjusted for Z1: Wait, What?</span><span class="sc">\n</span><span class="st">β = "</span>, stats_Z1<span class="sc">$</span>coef, </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats_Z1<span class="sc">$</span>p),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X (adjusted for Z1)"</span>, </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Y (adjusted for Z1)"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.3</span>))</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(resid_Y_Z1 <span class="sc">~</span> resid_X_Z1), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjusted for Z2</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>resid_X_Z2 <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(X <span class="sc">~</span> Z2))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>resid_Y_Z2 <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(Y <span class="sc">~</span> Z2))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(resid_X_Z2, resid_Y_Z2,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Adjusted for Z2: This Can't Be Right</span><span class="sc">\n</span><span class="st">β = "</span>, stats_Z2<span class="sc">$</span>coef, </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats_Z2<span class="sc">$</span>p),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X (adjusted for Z2)"</span>, </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Y (adjusted for Z2)"</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">0</span>, <span class="fl">0.3</span>))</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(resid_Y_Z2 <span class="sc">~</span> resid_X_Z2), <span class="at">col =</span> <span class="st">"darkgreen"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjusted for both</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>resid_X_both <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(X <span class="sc">~</span> Z1 <span class="sc">+</span> Z2))</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>resid_Y_both <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(Y <span class="sc">~</span> Z1 <span class="sc">+</span> Z2))</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(resid_X_both, resid_Y_both,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Adjusted for Both: I Give Up</span><span class="sc">\n</span><span class="st">β = "</span>, stats_both<span class="sc">$</span>coef, </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats_both<span class="sc">$</span>p),</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X (adjusted for Z1 and Z2)"</span>, </span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Y (adjusted for Z1 and Z2)"</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>))</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(resid_Y_both <span class="sc">~</span> resid_X_both), <span class="at">col =</span> <span class="st">"purple"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-scenario1-all" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scenario1-all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="associations-cautionary-tale_files/figure-html/fig-scenario1-all-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scenario1-all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The descent into madness
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="act-ii-confusion" class="level2">
+<h2 class="anchored" data-anchor-id="act-ii-confusion">Act II: Confusion</h2>
+<p><em>Record scratch. Freeze frame.</em></p>
+<p><strong>What just happened?</strong></p>
+<ul>
+<li>When you adjust for Z1, your headline grabbing positive association <strong>vanishes into thin air</strong></li>
+<li>When you adjust for Z2, your association is <strong>still positive</strong> (phew!), though different</li>
+<li>When you adjust for both, your association turns <strong>negative</strong></li>
+</ul>
+<p>You’re now staring at four completely different answers to the same question. Which one is “right”? Do you:</p>
+<ol type="A">
+<li>Report the unadjusted result and hope no reviewer asks about confounding?<br>
+</li>
+<li>Report whichever adjusted result supports your hypothesis?<br>
+</li>
+<li>Report all of them and claim “it’s complicated”?<br>
+</li>
+<li>Question your entire approach to science?</li>
+</ol>
+<p>If you answered D, congratulations! You’ve just discovered that <strong>statistics without causal reasoning is like surgery without anatomy.</strong></p>
+</section>
+<section id="act-iii-revelation" class="level2">
+<h2 class="anchored" data-anchor-id="act-iii-revelation">Act III: Revelation</h2>
+<p>Here’s what was <em>actually</em> happening in your data:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dag <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">'dag {</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 [pos="2,1"]</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">  X [pos="1,2"]</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">  Y [pos="3,2"]</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">  Z2 [pos="2,3"]</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 -&gt; X</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 -&gt; Y</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">  X -&gt; Z2</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">  Y -&gt; Z2</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">}'</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdag</span>(dag) <span class="sc">+</span> </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dag</span>() <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Scenario 1: The Actual Causal Structure"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Notice anything missing between X and Y?"</span>) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-dag1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dag1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="associations-cautionary-tale_files/figure-html/fig-dag1-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dag1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The truth hurts
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Plot twist:</strong> There was <strong>no causal effect of X on Y at all</strong>. Zero. Zilch. Nada. That’s why you don’t see an arrow from X to Y in the Causal DAG (Directed Acyclic Graph) above.</p>
+<ul>
+<li><strong>Z1</strong> was a <strong>confounder</strong> causing both X and Y, creating a spurious correlation</li>
+<li><strong>Z2</strong> was a <strong>collider</strong> caused by both X and Y</li>
+<li>When you adjusted for Z1, you correctly removed the confounding and revealed the truth: no effect</li>
+<li>When you adjusted for Z2 (the collider), you <em>created</em> spurious associations through collider bias</li>
+<li>When you adjusted for both, collider bias dominated, creating a negative association</li>
+</ul>
+<p><strong>The correct answer was the one that made you the <em>most</em> disappointed.</strong> Welcome to causal inference.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>results_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Marginal (unadjusted)"</span>, <span class="st">"Adjusted for Z1"</span>, <span class="st">"Adjusted for Z2"</span>, <span class="st">"Adjusted for both"</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Beta =</span> <span class="fu">c</span>(stats_marg<span class="sc">$</span>coef, stats_Z1<span class="sc">$</span>coef, stats_Z2<span class="sc">$</span>coef, stats_both<span class="sc">$</span>coef),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">R_squared =</span> <span class="fu">c</span>(stats_marg<span class="sc">$</span>r2, stats_Z1<span class="sc">$</span>r2, stats_Z2<span class="sc">$</span>r2, stats_both<span class="sc">$</span>r2),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">P_value =</span> <span class="fu">c</span>(stats_marg<span class="sc">$</span>p, stats_Z1<span class="sc">$</span>p, stats_Z2<span class="sc">$</span>p, stats_both<span class="sc">$</span>p),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Interpretation =</span> <span class="fu">c</span>(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"❌ Spurious due to confounding"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"✅ Correct: No causal effect"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"❌ Spurious due to collider bias"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"❌ Spurious due to collider bias"</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(results_df, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">align =</span> <span class="st">"lcccc"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Model"</span>, <span class="st">"β"</span>, <span class="st">"R²"</span>, <span class="st">"p-value"</span>, <span class="st">"Interpretation"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-scenario1-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-scenario1-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary of Scenario 1 Results
+</figcaption>
+<div aria-describedby="tbl-scenario1-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: center;">β</th>
+<th style="text-align: center;">R²</th>
+<th style="text-align: center;">p-value</th>
+<th style="text-align: center;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Marginal (unadjusted)</td>
+<td style="text-align: center;">1.083</td>
+<td style="text-align: center;">0.613</td>
+<td style="text-align: center;">p &lt; 0.001</td>
+<td style="text-align: center;">❌ Spurious due to confounding</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adjusted for Z1</td>
+<td style="text-align: center;">0.011</td>
+<td style="text-align: center;">0.850</td>
+<td style="text-align: center;">p = 0.296</td>
+<td style="text-align: center;">✅ Correct: No causal effect</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adjusted for Z2</td>
+<td style="text-align: center;">0.073</td>
+<td style="text-align: center;">0.799</td>
+<td style="text-align: center;">p &lt; 0.001</td>
+<td style="text-align: center;">❌ Spurious due to collider bias</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adjusted for both</td>
+<td style="text-align: center;">-0.258</td>
+<td style="text-align: center;">0.889</td>
+<td style="text-align: center;">p &lt; 0.001</td>
+<td style="text-align: center;">❌ Spurious due to collider bias</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="act-iv-hope-and-then-despair" class="level2">
+<h2 class="anchored" data-anchor-id="act-iv-hope-and-then-despair">Act IV: Hope… and then Despair</h2>
+<p>Time is running out. Your annual review is in 6 months, and your productivity metrics are, to put it charitably, “concerning.” You need a paper. Not just any paper—a <em>good</em> paper. Preferably in a journal with an impact factor that will make your department chair’s eyes light up like a slot machine hitting triple sevens.</p>
+<p>But then, fortune smiles upon you. Or so you think.</p>
+<p>You discover that the graduate student who originally extracted the data from your institution’s large clinical database—as part of his master’s thesis, no less—had used an LLM to write the SQL code. ChatGPT, Claude, Gemini, who knows. And that code was <em>wrong</em>. Not subtly wrong. Not “off by a rounding error” wrong. Capital-W Wrong. The kind of wrong that sullies an entire master’s thesis.</p>
+<p>You reprimand the student sternly (while secretly thanking the scientific gods that you caught this before publication). He promises to fix it, but then mumbles something about a graduation deadline and a job offer in industry that starts in two weeks. You do what any reasonable mentor would do: you graduate him anyway and fix the SQL yourself. At 11 PM. On a Saturday. While stress-eating cold pizza.</p>
+<p>But now—<em>now</em>—you have new data. Correct data. <strong>The best data.</strong> Data extracted with proper SQL that you wrote yourself, tested twice, and validated against the data dictionary. Surely, with the right data, your hypothesis will finally prove true. The X-factor definitely makes disease Y worse. The original analysis was just poisoned by bad data extraction. That’s all it was.</p>
+<p>You load the corrected dataset with the eager anticipation of someone who has convinced themselves that this time will be different. You check the marginal association first, already mentally drafting your <em>Natura Medicine</em> cover letter:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X, Y, </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"No Association?</span><span class="sc">\n</span><span class="st">β = "</span>, stats2_marg<span class="sc">$</span>coef, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats2_marg<span class="sc">$</span>p),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.3</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X-Factor"</span>, <span class="at">ylab =</span> <span class="st">"Disease Severity (Y)"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit2_marginal, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-scenario2-marginal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scenario2-marginal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="associations-cautionary-tale_files/figure-html/fig-scenario2-marginal-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scenario2-marginal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Nothing to see here?
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Nothing.</strong> No association. Not even close to significant. Your hypothesis appears to be wrong.</p>
+<p>But you remember that confounding can <em>mask</em> true effects, so you decide to adjust anyway…</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Marginal</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X, Y, </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Unadjusted: Nothing to See Here</span><span class="sc">\n</span><span class="st">β = "</span>, stats2_marg<span class="sc">$</span>coef, </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats2_marg<span class="sc">$</span>p),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.3</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X"</span>, <span class="at">ylab =</span> <span class="st">"Y"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit2_marginal, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjusted for Z1</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>resid2_X_Z1 <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(X <span class="sc">~</span> Z1))</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>resid2_Y_Z1 <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(Y <span class="sc">~</span> Z1))</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(resid2_X_Z1, resid2_Y_Z1,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Adjusted for Z1: Wait, I Was Right?</span><span class="sc">\n</span><span class="st">β = "</span>, stats2_Z1<span class="sc">$</span>coef, </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats2_Z1<span class="sc">$</span>p),</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X (adjusted for Z1)"</span>, </span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Y (adjusted for Z1)"</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.3</span>))</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(resid2_Y_Z1 <span class="sc">~</span> resid2_X_Z1), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjusted for Z2</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>resid2_X_Z2 <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(X <span class="sc">~</span> Z2))</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>resid2_Y_Z2 <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(Y <span class="sc">~</span> Z2))</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(resid2_X_Z2, resid2_Y_Z2,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Adjusted for Z2: Now It's Negative?</span><span class="sc">\n</span><span class="st">β = "</span>, stats2_Z2<span class="sc">$</span>coef, </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats2_Z2<span class="sc">$</span>p),</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X (adjusted for Z2)"</span>, </span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Y (adjusted for Z2)"</span>,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">0</span>, <span class="fl">0.3</span>))</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(resid2_Y_Z2 <span class="sc">~</span> resid2_X_Z2), <span class="at">col =</span> <span class="st">"darkgreen"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjusted for both</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>resid2_X_both <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(X <span class="sc">~</span> Z1 <span class="sc">+</span> Z2))</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>resid2_Y_both <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="fu">lm</span>(Y <span class="sc">~</span> Z1 <span class="sc">+</span> Z2))</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(resid2_X_both, resid2_Y_both,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Adjusted for Both: Back to Nothing</span><span class="sc">\n</span><span class="st">β = "</span>, stats2_both<span class="sc">$</span>coef, </span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>                   <span class="st">", "</span>, stats2_both<span class="sc">$</span>p),</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X (adjusted for Z1 and Z2)"</span>, </span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Y (adjusted for Z1 and Z2)"</span>,</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>))</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(resid2_Y_both <span class="sc">~</span> resid2_X_both), <span class="at">col =</span> <span class="st">"purple"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-scenario2-all" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scenario2-all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="associations-cautionary-tale_files/figure-html/fig-scenario2-all-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scenario2-all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Through the looking glass
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="act-v-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="act-v-understanding">Act V: Understanding</h2>
+<p>The causal structure this time:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dag2 <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">'dag {</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 [pos="2,1"]</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">  X [pos="1,2"]</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">  Y [pos="3,2"]</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">  Z2 [pos="2,3"]</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 -&gt; X</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 -&gt; Y</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">  X -&gt; Y</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="st">  X -&gt; Z2</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="st">  Y -&gt; Z2</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="st">}'</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdag</span>(dag2) <span class="sc">+</span> </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dag</span>() <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Scenario 2: The Actual Causal Structure"</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This time X DOES cause Y! (True causal effect = 0.5)"</span>) <span class="sc">+</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-dag2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dag2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="associations-cautionary-tale_files/figure-html/fig-dag2-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dag2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: This time with feeling
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Plot twist #2:</strong> X <em>actually did</em> cause Y (with a true causal effect of 0.5)!</p>
+<ul>
+<li><strong>Z1</strong> was a <strong>negative confounder</strong> (suppressor), completely masking the true positive effect in the marginal analysis</li>
+<li>When you adjusted for Z1, you revealed the true causal effect (~0.5)</li>
+<li>When you adjusted for Z2 (collider), you created spurious negative bias</li>
+<li>When you adjusted for both, the collider bias canceled out the true effect</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>results2_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Marginal (unadjusted)"</span>, <span class="st">"Adjusted for Z1"</span>, <span class="st">"Adjusted for Z2"</span>, <span class="st">"Adjusted for both"</span>),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Beta =</span> <span class="fu">c</span>(stats2_marg<span class="sc">$</span>coef, stats2_Z1<span class="sc">$</span>coef, stats2_Z2<span class="sc">$</span>coef, stats2_both<span class="sc">$</span>coef),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">R_squared =</span> <span class="fu">c</span>(stats2_marg<span class="sc">$</span>r2, stats2_Z1<span class="sc">$</span>r2, stats2_Z2<span class="sc">$</span>r2, stats2_both<span class="sc">$</span>r2),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">P_value =</span> <span class="fu">c</span>(stats2_marg<span class="sc">$</span>p, stats2_Z1<span class="sc">$</span>p, stats2_Z2<span class="sc">$</span>p, stats2_both<span class="sc">$</span>p),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Interpretation =</span> <span class="fu">c</span>(</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"❌ Masked by negative confounding"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"✅ Correct: True causal effect ≈ 0.5"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"❌ Spurious due to collider bias"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"❌ Masked by collider bias"</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(results2_df, <span class="at">digits =</span> <span class="dv">3</span>, <span class="at">align =</span> <span class="st">"lcccc"</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Model"</span>, <span class="st">"β"</span>, <span class="st">"R²"</span>, <span class="st">"p-value"</span>, <span class="st">"Interpretation"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-scenario2-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-scenario2-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Summary of Scenario 2 Results
+</figcaption>
+<div aria-describedby="tbl-scenario2-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: center;">β</th>
+<th style="text-align: center;">R²</th>
+<th style="text-align: center;">p-value</th>
+<th style="text-align: center;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Marginal (unadjusted)</td>
+<td style="text-align: center;">0.007</td>
+<td style="text-align: center;">0.000</td>
+<td style="text-align: center;">p = 0.307</td>
+<td style="text-align: center;">❌ Masked by negative confounding</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adjusted for Z1</td>
+<td style="text-align: center;">0.514</td>
+<td style="text-align: center;">0.011</td>
+<td style="text-align: center;">p &lt; 0.001</td>
+<td style="text-align: center;">✅ Correct: True causal effect ≈ 0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adjusted for Z2</td>
+<td style="text-align: center;">-0.321</td>
+<td style="text-align: center;">0.319</td>
+<td style="text-align: center;">p &lt; 0.001</td>
+<td style="text-align: center;">❌ Spurious due to collider bias</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adjusted for both</td>
+<td style="text-align: center;">0.006</td>
+<td style="text-align: center;">0.323</td>
+<td style="text-align: center;">p = 0.925</td>
+<td style="text-align: center;">❌ Masked by collider bias</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="epilogue-the-moral-of-the-story" class="level2">
+<h2 class="anchored" data-anchor-id="epilogue-the-moral-of-the-story">Epilogue: The Moral of the Story</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Iron Law of Causal Inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>You cannot determine what to adjust for by looking at the data.</strong></p>
+<p>The decision of which variables to adjust for depends entirely on the causal structure (the DAG), not on p-values, effect sizes, or model fit statistics.</p>
+</div>
+</div>
+<p>What you learned today:</p>
+<ol type="1">
+<li><strong>Statistical association ≠ causation</strong> (you knew this, but now you <em>feel</em> it)</li>
+<li><strong>Lack of association ≠ no causation</strong> (confounding can completely mask real effects)</li>
+<li><strong>“Adjusting for everything” is not a strategy</strong> (“Trust the DAG, Luke”)</li>
+<li><strong>The same data can tell many stories</strong> depending on what you adjust for</li>
+<li><strong>You need a causal model (DAG) <em>before</em> you analyze data</strong>, not after</li>
+</ol>
+</section>
+<section id="what-should-you-actually-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-should-you-actually-do">What Should You Actually Do?</h2>
+<p>Before you collect data, draw your hypothesized causal DAG based on:</p>
+<ul>
+<li>Subject matter knowledge</li>
+<li>Prior literature</li>
+<li>Expert consultation</li>
+<li>Biological/mechanistic reasoning</li>
+</ul>
+<p>Then use your DAG to determine the <strong>minimal sufficient adjustment set</strong> needed to identify your causal effect. This is the <em>only</em> adjustment set you should use.</p>
+<p>Tools that can help:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For Scenario 1 (no causal effect X -&gt; Y)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dag1 <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">'dag {</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 -&gt; X</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 -&gt; Y</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="st">  X -&gt; Z2</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="st">  Y -&gt; Z2</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">}'</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Scenario 1 - Valid adjustment sets to identify causal effect of X on Y:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Scenario 1 - Valid adjustment sets to identify causal effect of X on Y:</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">adjustmentSets</span>(dag1, <span class="at">exposure =</span> <span class="st">"X"</span>, <span class="at">outcome =</span> <span class="st">"Y"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>{ Z1 }</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For Scenario 2 (X does cause Y)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>dag2 <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">'dag {</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 -&gt; X</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">  Z1 -&gt; Y</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">  X -&gt; Y</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">  X -&gt; Z2</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">  Y -&gt; Z2</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="st">}'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Scenario 2 - Valid adjustment sets to identify causal effect of X on Y:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Scenario 2 - Valid adjustment sets to identify causal effect of X on Y:</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">adjustmentSets</span>(dag2, <span class="at">exposure =</span> <span class="st">"X"</span>, <span class="at">outcome =</span> <span class="st">"Y"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>{ Z1 }</code></pre>
+</div>
+</div>
+<p>In both scenarios, the answer is the same: <strong>adjust for Z1 only</strong>. Do not adjust for Z2 (the collider) and do not look at the marginal effect of X on Y (no adjustment), because in both scenarios their relationship is confounded by Z1.</p>
+</section>
+<section id="final-thought" class="level2">
+<h2 class="anchored" data-anchor-id="final-thought">Final Thought</h2>
+<blockquote class="blockquote">
+<p><em>“With great statistical power comes great responsibility to think causally.”</em><br>
+— Not Spider-Man, but should have been</p>
+</blockquote>
+<p>Remember: The most dangerous analyses are those that give you the answer you wanted using methods you don’t understand.</p>
+<p>Your p-value doesn’t care about causality. But you should.</p>
+<hr>
+<p><strong>Acknowledgments:</strong> No hypotheses were harmed in the making of this document. All data were simulated. Any resemblance to actual research practices is entirely intentional and deeply concerning.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Want to Learn More?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recommended resources (roughly more to less complex):</p>
+<ul>
+<li><strong>Pearl J, Mackenzie D.</strong> <em>The Book of Why</em> <span class="citation" data-cites="pearl2018book">(<a href="#ref-pearl2018book" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span></li>
+<li><a href="dagitty.net"><strong>dagitty.net</strong></a> - Draw and analyze your DAGs online</li>
+<li><strong>Huntington-Klein, N.</strong> T<em>he Effect: An Introduction to Research Design and Causality.</em> (Free online: <a href="https://theeffectbook.net/" class="uri">https://theeffectbook.net/</a>).</li>
+<li><strong>Pearl J, Glymour M, Jewell, NP.</strong> <em>Causal Inference in statistics: A primer.</em> <span class="citation" data-cites="pearl2016causal">(<a href="#ref-pearl2016causal" role="doc-biblioref">Pearl, Glymour, and Jewell 2016</a>)</span></li>
+<li><strong>McElreath R.</strong> <em>Statistical Rethinking</em> <span class="citation" data-cites="mcelreath2018statistical">(<a href="#ref-mcelreath2018statistical" role="doc-biblioref">McElreath 2018</a>)</span></li>
+<li><strong>Hernán MA, Robins JM.</strong> <em>Causal Inference: What If.</em> (Free online: <a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/" class="uri">https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/</a>)</li>
+</ul>
+</div>
+</div>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-mcelreath2018statistical" class="csl-entry" role="listitem">
+McElreath, Richard. 2018. <em>Statistical Rethinking: A Bayesian Course with Examples in r and Stan</em>. Chapman; Hall/CRC.
+</div>
+<div id="ref-pearl2016causal" class="csl-entry" role="listitem">
+Pearl, Judea, Madelyn Glymour, and Nicholas P Jewell. 2016. <em>Causal Inference in Statistics: A Primer</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-pearl2018book" class="csl-entry" role="listitem">
+Pearl, Judea, and Dana Mackenzie. 2018. <em>The Book of Why: The New Science of Cause and Effect</em>. Basic books.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
