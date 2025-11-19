@@ -475,7 +475,7 @@ Your p-value doesn't care about causality. But you should.
 ::: callout-tip
 ## Want to Learn More?
 
-Recommended resources (roughly more to less complex):
+Recommended resources (roughly less to more complex):
 
 -   **Pearl J, Mackenzie D.** *The Book of Why* [@pearl2018book]
 -   [**dagitty.net**](dagitty.net) - Draw and analyze your DAGs online
